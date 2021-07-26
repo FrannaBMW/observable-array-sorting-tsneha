@@ -1,0 +1,7 @@
+<h2>data from service:</h2>
+<div class='list'>
+	<ng-container *ngIf="data">
+		<span *ngFor="let item of data">{{item.name}}</span>
+	</ng-container>
+	<div>
+		<button (click)="sort(data)">do sort</button>
