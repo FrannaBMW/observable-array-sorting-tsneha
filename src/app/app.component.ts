@@ -43,27 +43,21 @@ export class AppComponent implements OnInit {
   }
 
   sortStream() {
-    // .pipe(
-    //   map(d => {
-    //     return this.sort(d);
-    //   })
-    // )
-
     this.service.getData().subscribe(d => (this.data = d));
   }
 
   sort(items: Item[]): Item[] {
-    for (var i = 0; i < items.length - 1; i++) {
-      let smallestItemIndex = i;
-      for (var j = i + 1; j < items.length; j++) {
-        if (items[j].value < items[smallestItemIndex].value) {
-          smallestItemIndex = j;
-        }
-      }
-      let temp = items[i];
-      items[i] = items[smallestItemIndex];
-      items[smallestItemIndex] = temp;
-    }
-    return items;
+    return null;
   }
 }
+
+// Selection Sort Algorithm //
+
+// selectionSort(array, size)
+//   repeat (size - 1) times
+//   set the first unsorted element as the minimum
+//   for each of the unsorted elements
+//     if element < currentMinimum
+//       set element as new minimum
+//   swap minimum with first unsorted position
+// end selectionSort
